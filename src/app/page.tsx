@@ -109,6 +109,7 @@ export default function HomePage() {
     const errorMessage = document.createElement('div')
     errorMessage.style.cssText = 'padding: 1rem; background: #dc2626; border-radius: 8px; text-align: center; margin-top: 1rem; color: white;'
     errorMessage.setAttribute('role', 'alert')
+    errorMessage.setAttribute('aria-live', 'assertive')
     errorMessage.textContent = message
     
     container.appendChild(errorMessage)
@@ -130,9 +131,13 @@ export default function HomePage() {
     const formData = new FormData(formRef.current)
     
     // Convert FormData to URLSearchParams properly
+    // Note: This implementation does not support file uploads
     const params = new URLSearchParams()
     formData.forEach((value, key) => {
-      params.append(key, value.toString())
+      // Only append string values (no file upload support)
+      if (typeof value === 'string') {
+        params.append(key, value)
+      }
     })
     
     try {
@@ -185,7 +190,7 @@ export default function HomePage() {
         // Scroll to message
         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' })
       } else {
-        showErrorMessage(formContainer, 'Failed to submit form. Please try again or call us at (904) 458-7561.')
+        showErrorMessage(formContainer, `Failed to submit form (Status: ${response.status}). Please try again or call us at (904) 458-7561.`)
       }
     } catch (error) {
       showErrorMessage(formContainer, 'An error occurred. Please try again later or call us at (904) 458-7561.')
