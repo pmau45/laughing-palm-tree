@@ -13,26 +13,19 @@ export default function ContactPage() {
     setIsSubmitting(true)
     setMessage(null)
 
-    const formData = new FormData(e.currentTarget)
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      phone: formData.get('phone'),
-      message: formData.get('message'),
-    }
+    const form = e.currentTarget
+    const formData = new FormData(form)
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/__forms.html', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as any).toString(),
       })
 
       if (response.ok) {
         setMessage({ type: 'success', text: 'Thank you! Your message has been sent successfully.' })
-        e.currentTarget.reset()
+        form.reset()
       } else {
         setMessage({ type: 'error', text: 'Failed to send message. Please try again.' })
       }
@@ -59,7 +52,8 @@ export default function ContactPage() {
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Contact Form */}
             <div>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form name="contact" onSubmit={handleSubmit} className="space-y-6">
+                <input type="hidden" name="form-name" value="contact" />
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700">
                     Name
