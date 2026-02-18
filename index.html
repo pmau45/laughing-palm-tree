@@ -48,7 +48,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐕</text></svg>">
     
     <style>
         /* CSS Variables - Design System */
@@ -153,7 +156,6 @@
             justify-content: center;
             text-align: center;
             background: linear-gradient(rgba(12, 12, 12, 0.6), rgba(12, 12, 12, 0.6)),
-                        url('image.png'),
                         url('https://images.unsplash.com/photo-1558929996-da64ba858215?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
@@ -656,7 +658,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo">AXIOM CANINE</a>
+            <a href="/" class="logo">AXIOM CANINE</a>
             <ul class="nav-links">
                 <li><a href="#reality">The Reality</a></li>
                 <li><a href="#pillars">Our Method</a></li>
@@ -838,18 +840,18 @@
                     </div>
                 </div>
                 <div class="contact-form reveal">
-                    <form>
+                    <form name="contact-form" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
                         </div>
                         <div class="form-group">
                             <label for="challenge">What challenges are you facing?</label>
-                            <textarea id="challenge" name="challenge" required></textarea>
+                            <textarea id="challenge" name="challenge" placeholder="Tell us about your dog's behavior challenges..." required></textarea>
                         </div>
                         <div class="form-actions">
                             <button type="submit" class="btn btn-primary">Request My Free Assessment →</button>
@@ -865,7 +867,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <a href="#" class="logo">AXIOM CANINE</a>
+                <a href="/" class="logo">AXIOM CANINE</a>
                 <p>Professional dog training in Jacksonville, FL</p>
                 <p>Structure. Consistency. Results.</p>
             </div>
@@ -877,10 +879,10 @@
             <div class="footer-section">
                 <h4>Follow Us</h4>
                 <div class="social-links">
-                    <a href="https://instagram.com/axiomcanine" target="_blank" rel="noopener" aria-label="Instagram">
+                    <a href="https://instagram.com/axiomcanine" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://facebook.com/axiomcanine" target="_blank" rel="noopener" aria-label="Facebook">
+                    <a href="https://facebook.com/axiomcanine" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                         <i class="fab fa-facebook-f"></i>
                     </a>
                 </div>
@@ -934,7 +936,19 @@
         if (form) {
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
-                alert('Thank you for your interest! We will contact you soon. For immediate assistance, please call (904) 458-7561.');
+                
+                // Show success message
+                const formContainer = this.parentElement;
+                const successMessage = document.createElement('div');
+                successMessage.style.cssText = 'padding: 2rem; background: var(--gold-dk); border-radius: 8px; text-align: center; margin-top: 1rem;';
+                successMessage.innerHTML = '<h3 style="color: var(--gold); margin-bottom: 1rem;">Thank you for your interest!</h3><p>We will contact you soon. For immediate assistance, please call <a href="tel:9044587561" style="color: var(--gold-lt); font-weight: bold;">(904) 458-7561</a>.</p>';
+                
+                // Hide form and show message
+                this.style.display = 'none';
+                formContainer.appendChild(successMessage);
+                
+                // Scroll to message
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
             });
         }
     </script>
