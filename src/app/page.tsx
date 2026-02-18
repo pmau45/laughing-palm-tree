@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { Metadata } from 'next'
 
 export default function HomePage() {
   const formRef = useRef<HTMLFormElement>(null)
@@ -11,34 +10,38 @@ export default function HomePage() {
     const menuToggle = document.querySelector('.menu-toggle')
     const navLinks = document.querySelector('.nav-links')
     
-    if (menuToggle && navLinks) {
-      const handleMenuToggle = () => {
-        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true'
-        menuToggle.setAttribute('aria-expanded', String(!isExpanded))
-        navLinks.classList.toggle('active')
-        
-        // Change icon
-        const icon = menuToggle.querySelector('i')
-        if (icon) {
-          icon.classList.toggle('fa-bars')
-          icon.classList.toggle('fa-times')
-        }
-      }
+    const handleMenuToggle = () => {
+      if (!menuToggle || !navLinks) return
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true'
+      menuToggle.setAttribute('aria-expanded', String(!isExpanded))
+      navLinks.classList.toggle('active')
       
+      // Change icon
+      const icon = menuToggle.querySelector('i')
+      if (icon) {
+        icon.classList.toggle('fa-bars')
+        icon.classList.toggle('fa-times')
+      }
+    }
+    
+    const handleNavLinkClick = () => {
+      if (!menuToggle || !navLinks) return
+      navLinks.classList.remove('active')
+      menuToggle.setAttribute('aria-expanded', 'false')
+      const icon = menuToggle.querySelector('i')
+      if (icon) {
+        icon.classList.remove('fa-times')
+        icon.classList.add('fa-bars')
+      }
+    }
+    
+    if (menuToggle && navLinks) {
       menuToggle.addEventListener('click', handleMenuToggle)
       
       // Close menu when clicking a link
       const navLinksItems = navLinks.querySelectorAll('a')
       navLinksItems.forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('active')
-          menuToggle.setAttribute('aria-expanded', 'false')
-          const icon = menuToggle.querySelector('i')
-          if (icon) {
-            icon.classList.remove('fa-times')
-            icon.classList.add('fa-bars')
-          }
-        })
+        link.addEventListener('click', handleNavLinkClick)
       })
     }
     
@@ -62,23 +65,42 @@ export default function HomePage() {
     })
 
     // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', (e) => {
-        const href = (e.currentTarget as HTMLAnchorElement).getAttribute('href')
-        if (href && href !== '#') {
-          e.preventDefault()
-          const target = document.querySelector(href)
-          if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            })
-          }
+    const handleAnchorClick = (e: Event) => {
+      const href = (e.currentTarget as HTMLAnchorElement).getAttribute('href')
+      if (href && href !== '#') {
+        e.preventDefault()
+        const target = document.querySelector(href)
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          })
         }
-      })
+      }
+    }
+    
+    const anchorLinks = document.querySelectorAll('a[href^="#"]')
+    anchorLinks.forEach(anchor => {
+      anchor.addEventListener('click', handleAnchorClick)
     })
 
     return () => {
+      // Cleanup event listeners
+      if (menuToggle) {
+        menuToggle.removeEventListener('click', handleMenuToggle)
+      }
+      
+      if (navLinks) {
+        const navLinksItems = navLinks.querySelectorAll('a')
+        navLinksItems.forEach(link => {
+          link.removeEventListener('click', handleNavLinkClick)
+        })
+      }
+      
+      anchorLinks.forEach(anchor => {
+        anchor.removeEventListener('click', handleAnchorClick)
+      })
+      
       observer.disconnect()
     }
   }, [])
