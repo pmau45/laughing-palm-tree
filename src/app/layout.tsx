@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { BUSINESS_INFO, SITE_URL } from '@/lib/constants'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
 import { JsonLd, generateLocalBusinessSchema } from '@/components/seo/JsonLd'
 
 export const metadata: Metadata = {
@@ -137,9 +135,7 @@ export default function RootLayout({
       </head>
       <body>
         <a href="#main-content" className="skip-to-content">Skip to main content</a>
-        <Header />
         <main id="main-content">{children}</main>
-        <Footer />
       </body>
     </html>
   )

@@ -341,6 +341,35 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer>
+        <div className="footer-content">
+          <div className="footer-brand">
+            <span className="logo">AXIOM CANINE</span>
+            <p>Professional dog training in Jacksonville, FL</p>
+          </div>
+          <div className="footer-section">
+            <h4>Contact</h4>
+            <p><i className="fas fa-phone"></i> (904) 458-7561</p>
+            <p><i className="fas fa-map-marker-alt"></i> Jacksonville, FL</p>
+          </div>
+          <div className="footer-section">
+            <h4>Follow Us</h4>
+            <div className="social-links">
+              <a href="https://instagram.com/axiomcanine" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="https://facebook.com/axiomcanine" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <p>&copy; 2026 Axiom Canine. All rights reserved.</p>
+        </div>
+      </footer>
     </>
   )
 }
