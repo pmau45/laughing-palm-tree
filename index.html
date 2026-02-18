@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axiom Canine | Dog Training Jacksonville FL | Structure. Consistency. Results.</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Professional dog training in Jacksonville, FL. Transform your dog with our 3-pillar method: Structure, Consistency, Results. Serving Jacksonville, Ponte Vedra, and surrounding areas.">
+    <meta name="keywords" content="dog training Jacksonville, dog trainer Jacksonville FL, puppy training, obedience training, behavior modification, Jacksonville dog training">
+    <meta name="author" content="Axiom Canine">
+    
+    <!-- OpenGraph Tags -->
+    <meta property="og:title" content="Axiom Canine | Dog Training Jacksonville FL">
+    <meta property="og:description" content="Professional dog training in Jacksonville, FL. Transform your dog with our 3-pillar method: Structure, Consistency, Results.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://axiomcanine.com">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1558929996-da64ba858215?auto=format&fit=crop&w=1200&q=80">
+    
+    <!-- Schema.org LocalBusiness Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Axiom Canine",
+      "description": "Professional dog training services in Jacksonville, FL",
+      "telephone": "(904) 458-7561",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jacksonville",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        "Jacksonville, FL",
+        "Ponte Vedra Beach, FL",
+        "Mandarin, FL",
+        "Orange Park, FL",
+        "St. Augustine, FL"
+      ],
+      "priceRange": "$$"
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* CSS Variables - Design System */
+        :root {
+            --gold: #C8962E;
+            --gold-lt: #E2B860;
+            --gold-dk: #8A6518;
+            --ink: #0C0C0C;
+            --ink-2: #161616;
+            --ink-3: #1E1E1E;
+            --rule: #2A2A2A;
+            --muted: #666;
+            --light: #F4F0E8;
+            --white: #FFFFFF;
+        }
+        
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--ink);
+            color: var(--light);
+            line-height: 1.6;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
+            line-height: 1.2;
+        }
+        
+        .serif {
+            font-family: 'DM Serif Display', serif;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(12, 12, 12, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--rule);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(12, 12, 12, 0.6), rgba(12, 12, 12, 0.6)),
+                        url('image.png'),
+                        url('https://images.unsplash.com/photo-1558929996-da64ba858215?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--light);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--ink);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--gold-lt);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--light);
+            border: 2px solid var(--light);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--light);
+            color: var(--ink);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .section-header p {
+            font-size: 1.25rem;
+            color: var(--muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Reality Section */
+        .reality {
+            background-color: var(--ink-2);
+        }
+        
+        .reality-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+        
+        .reality-column h3 {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .reality-column p {
+            color: var(--light);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        /* Manifesto Quote */
+        .manifesto {
+            background-color: var(--gold);
+            color: var(--ink);
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        
+        .manifesto blockquote {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            font-style: italic;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        
+        /* Pillars Section */
+        .pillars {
+            background-color: var(--ink);
+        }
+        
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .pillar-card {
+            background-color: var(--ink-3);
+            padding: 2rem;
+            border: 1px solid var(--rule);
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+        
+        .pillar-card i {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .pillar-card h3 {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .pillar-card p {
+            color: var(--light);
+            line-height: 1.8;
+        }
+        
+        /* Problems Section */
+        .problems {
+            background-color: var(--ink-2);
+        }
+        
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .problem-card {
+            background-color: var(--ink-3);
+            padding: 2rem;
+            border: 1px solid var(--rule);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+        
+        .problem-card i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .problem-card h3 {
+            font-size: 1.5rem;
+            color: var(--light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .problem-card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+        
+        /* Service Area Section */
+        .service-area {
+            background-color: var(--ink);
+        }
+        
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+        
+        .location-item {
+            background-color: var(--ink-3);
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid var(--rule);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .location-item:hover {
+            background-color: var(--gold);
+            color: var(--ink);
+        }
+        
+        .location-item i {
+            margin-right: 0.5rem;
+            color: var(--gold);
+        }
+        
+        .location-item:hover i {
+            color: var(--ink);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--ink-2);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+        }
+        
+        .trust-badges {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .trust-badge i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-top: 0.25rem;
+        }
+        
+        .trust-badge h3 {
+            font-size: 1.5rem;
+            color: var(--light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .trust-badge p {
+            color: var(--muted);
+        }
+        
+        .contact-form {
+            background-color: var(--ink-3);
+            padding: 2rem;
+            border: 1px solid var(--rule);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--ink-2);
+            border: 1px solid var(--rule);
+            color: var(--light);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--ink-3);
+            padding: 3rem 2rem 1rem;
+            border-top: 1px solid var(--rule);
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-brand .logo {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-brand p {
+            color: var(--muted);
+        }
+        
+        .footer-section h4 {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: var(--muted);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--ink-2);
+            border: 1px solid var(--rule);
+            color: var(--gold);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--gold);
+            color: var(--ink);
+        }
+        
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--rule);
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .reality-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pillars-grid,
+            .problems-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .locations-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            section {
+                padding: 3rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+            
+            .pillars-grid,
+            .problems-grid,
+            .locations-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .manifesto blockquote {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">AXIOM CANINE</a>
+            <ul class="nav-links">
+                <li><a href="#reality">The Reality</a></li>
+                <li><a href="#pillars">Our Method</a></li>
+                <li><a href="#problems">Common Issues</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Structure. Consistency. Results.</h1>
+            <p>Professional dog training in Jacksonville, FL</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Request Free Assessment →</a>
+                <a href="tel:9044587561" class="btn btn-secondary"><i class="fas fa-phone"></i> (904) 458-7561</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reality Section -->
+    <section id="reality" class="reality">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>The Reality</h2>
+                <p>Understanding the root of the problem</p>
+            </div>
+            <div class="reality-grid">
+                <div class="reality-column reveal">
+                    <h3>The Problem</h3>
+                    <p>Most dog training focuses on symptoms—pulling on the leash, not coming when called, jumping on guests. But these are just the visible signs of a deeper issue.</p>
+                    <p>Without a clear structure, your dog makes their own rules. Without consistency, they never learn what's expected. And without proper follow-through, you never see lasting results.</p>
+                    <p>The cycle continues: frustration builds, trust erodes, and the bond you hoped for remains out of reach.</p>
+                </div>
+                <div class="reality-column reveal">
+                    <h3>The Solution</h3>
+                    <p>Real transformation doesn't come from tricks or quick fixes. It comes from establishing a foundation built on three essential pillars.</p>
+                    <p>Structure gives your dog clarity. Consistency builds understanding. Results speak for themselves.</p>
+                    <p>This isn't about dominance or force. It's about clear communication, mutual respect, and building the relationship you and your dog deserve.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto Quote -->
+    <section class="manifesto">
+        <blockquote class="reveal">
+            "A well-trained dog isn't the result of chance. It's the product of structure, consistency, and unwavering commitment to results."
+        </blockquote>
+    </section>
+
+    <!-- Pillars Section -->
+    <section id="pillars" class="pillars">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>The 3-Pillar Method</h2>
+                <p>Our proven approach to lasting transformation</p>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card reveal">
+                    <i class="fas fa-chess-board"></i>
+                    <h3>Structure</h3>
+                    <p>Clear boundaries and expectations create a framework your dog can understand. Structure eliminates confusion and builds confidence.</p>
+                </div>
+                <div class="pillar-card reveal">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Consistency</h3>
+                    <p>Repetition builds understanding. Consistency in your approach ensures your dog knows exactly what's expected every single time.</p>
+                </div>
+                <div class="pillar-card reveal">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Results</h3>
+                    <p>We measure success by real-world performance. No excuses, no shortcuts—just measurable, lasting behavioral change.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section id="problems" class="problems">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Common Challenges We Solve</h2>
+                <p>Transforming problem behaviors into confident obedience</p>
+            </div>
+            <div class="problems-grid">
+                <div class="problem-card reveal">
+                    <i class="fas fa-directions"></i>
+                    <h3>Leash Pulling</h3>
+                    <p>End the tug-of-war and enjoy peaceful walks with a dog that respects your lead.</p>
+                </div>
+                <div class="problem-card reveal">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Poor Recall</h3>
+                    <p>Build reliable off-leash control so your dog comes when called—every time.</p>
+                </div>
+                <div class="problem-card reveal">
+                    <i class="fas fa-hand-paper"></i>
+                    <h3>Jumping</h3>
+                    <p>Teach your dog proper greeting manners without the chaos of jumping on guests.</p>
+                </div>
+                <div class="problem-card reveal">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Aggression</h3>
+                    <p>Address reactivity and aggression with a structured approach that creates lasting change.</p>
+                </div>
+                <div class="problem-card reveal">
+                    <i class="fas fa-heart-broken"></i>
+                    <h3>Anxiety</h3>
+                    <p>Build confidence and reduce stress through clear communication and structure.</p>
+                </div>
+                <div class="problem-card reveal">
+                    <i class="fas fa-volume-up"></i>
+                    <h3>Excessive Barking</h3>
+                    <p>Eliminate nuisance barking while maintaining your dog's natural alertness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area Section -->
+    <section id="service-area" class="service-area">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Areas We Serve</h2>
+                <p>Professional dog training throughout Northeast Florida</p>
+            </div>
+            <div class="locations-grid">
+                <div class="location-item reveal"><i class="fas fa-map-marker-alt"></i> Jacksonville</div>
+                <div class="location-item reveal"><i class="fas fa-map-marker-alt"></i> Ponte Vedra Beach</div>
+                <div class="location-item reveal"><i class="fas fa-map-marker-alt"></i> Mandarin</div>
+                <div class="location-item reveal"><i class="fas fa-map-marker-alt"></i> Southside</div>
+                <div class="location-item reveal"><i class="fas fa-map-marker-alt"></i> Riverside</div>
+                <div class="location-item reveal"><i class="fas fa-map-marker-alt"></i> Avondale</div>
+                <div class="location-item reveal"><i class="fas fa-map-marker-alt"></i> Orange Park</div>
+                <div class="location-item reveal"><i class="fas fa-map-marker-alt"></i> Fleming Island</div>
+                <div class="location-item reveal"><i class="fas fa-map-marker-alt"></i> St. Augustine</div>
+                <div class="location-item reveal"><i class="fas fa-map-marker-alt"></i> Nocatee</div>
+                <div class="location-item reveal"><i class="fas fa-map-marker-alt"></i> Fernandina Beach</div>
+                <div class="location-item reveal"><i class="fas fa-map-marker-alt"></i> Yulee</div>
+                <div class="location-item reveal"><i class="fas fa-map-marker-alt"></i> Middleburg</div>
+                <div class="location-item reveal"><i class="fas fa-map-marker-alt"></i> Fruit Cove</div>
+                <div class="location-item reveal"><i class="fas fa-map-marker-alt"></i> San Marco</div>
+                <div class="location-item reveal"><i class="fas fa-map-marker-alt"></i> Neptune Beach</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Start Your Transformation</h2>
+                <p>Request your free assessment today</p>
+            </div>
+            <div class="contact-grid">
+                <div class="trust-badges">
+                    <div class="trust-badge reveal">
+                        <i class="fas fa-certificate"></i>
+                        <div>
+                            <h3>Professional Training</h3>
+                            <p>Proven methods backed by years of experience transforming dogs across Jacksonville.</p>
+                        </div>
+                    </div>
+                    <div class="trust-badge reveal">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <h3>Personalized Approach</h3>
+                            <p>Every dog is unique. We tailor our training to your dog's specific needs and your goals.</p>
+                        </div>
+                    </div>
+                    <div class="trust-badge reveal">
+                        <i class="fas fa-chart-line"></i>
+                        <div>
+                            <h3>Measurable Results</h3>
+                            <p>We focus on real-world outcomes, not just obedience in controlled environments.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form reveal">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="challenge">What challenges are you facing?</label>
+                            <textarea id="challenge" name="challenge" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Request My Free Assessment →</button>
+                            <a href="tel:9044587561" class="btn btn-secondary"><i class="fas fa-phone"></i> Call Now</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">AXIOM CANINE</a>
+                <p>Professional dog training in Jacksonville, FL</p>
+                <p>Structure. Consistency. Results.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone"></i> (904) 458-7561</p>
+                <p><i class="fas fa-map-marker-alt"></i> Jacksonville, FL</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://instagram.com/axiomcanine" target="_blank" rel="noopener" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com/axiomcanine" target="_blank" rel="noopener" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Axiom Canine. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Scroll Reveal Animation -->
+    <script>
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with .reveal class
+        document.querySelectorAll('.reveal').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Form submission handler (placeholder for future Netlify Forms integration)
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your interest! We will contact you soon. For immediate assistance, please call (904) 458-7561.');
+            });
+        }
+    </script>
+</body>
+</html>
