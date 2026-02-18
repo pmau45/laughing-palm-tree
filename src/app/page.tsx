@@ -124,6 +124,9 @@ export default function HomePage() {
     
     if (!formRef.current) return
     
+    const formContainer = formRef.current.parentElement
+    if (!formContainer) return
+    
     const formData = new FormData(formRef.current)
     
     // Convert FormData to URLSearchParams properly
@@ -141,9 +144,6 @@ export default function HomePage() {
       
       if (response.ok) {
         // Show success message using DOM methods for security
-        const formContainer = formRef.current.parentElement
-        if (!formContainer) return
-        
         const successMessage = document.createElement('div')
         successMessage.style.cssText = 'padding: 2rem; background: var(--gold-dk); border-radius: 8px; text-align: center; margin-top: 1rem;'
         successMessage.setAttribute('role', 'status')
@@ -167,9 +167,15 @@ export default function HomePage() {
         successMessage.appendChild(heading)
         successMessage.appendChild(paragraph)
         
-        // Hide form visually but keep in DOM for accessibility
+        // Hide form visually and make it inaccessible
         formRef.current.setAttribute('aria-hidden', 'true')
         formRef.current.style.display = 'none'
+        // Disable all form inputs to prevent keyboard navigation
+        const inputs = formRef.current.querySelectorAll('input, textarea, button')
+        inputs.forEach((input) => {
+          (input as HTMLInputElement | HTMLTextAreaElement | HTMLButtonElement).disabled = true
+        })
+        
         formContainer.appendChild(successMessage)
         
         // Focus on success message for screen readers
@@ -179,13 +185,9 @@ export default function HomePage() {
         // Scroll to message
         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' })
       } else {
-        const formContainer = formRef.current.parentElement
-        if (!formContainer) return
         showErrorMessage(formContainer, 'Failed to submit form. Please try again or call us at (904) 458-7561.')
       }
     } catch (error) {
-      const formContainer = formRef.current.parentElement
-      if (!formContainer) return
       showErrorMessage(formContainer, 'An error occurred. Please try again later or call us at (904) 458-7561.')
     }
   }
