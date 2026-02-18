@@ -51,7 +51,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐕</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐕</text></svg>">
     
     <style>
         /* CSS Variables - Design System */
@@ -840,6 +840,8 @@
                     </div>
                 </div>
                 <div class="contact-form reveal">
+                    <!-- Form is handled by JavaScript preventDefault for demo purposes. 
+                         To enable Netlify Forms, add netlify attribute and remove the preventDefault in JS -->
                     <form name="contact-form" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -937,11 +939,28 @@
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                // Show success message
+                // Show success message using DOM methods for security
                 const formContainer = this.parentElement;
                 const successMessage = document.createElement('div');
                 successMessage.style.cssText = 'padding: 2rem; background: var(--gold-dk); border-radius: 8px; text-align: center; margin-top: 1rem;';
-                successMessage.innerHTML = '<h3 style="color: var(--gold); margin-bottom: 1rem;">Thank you for your interest!</h3><p>We will contact you soon. For immediate assistance, please call <a href="tel:9044587561" style="color: var(--gold-lt); font-weight: bold;">(904) 458-7561</a>.</p>';
+                
+                const heading = document.createElement('h3');
+                heading.style.cssText = 'color: var(--gold); margin-bottom: 1rem;';
+                heading.textContent = 'Thank you for your interest!';
+                
+                const paragraph = document.createElement('p');
+                paragraph.textContent = 'We will contact you soon. For immediate assistance, please call ';
+                
+                const phoneLink = document.createElement('a');
+                phoneLink.href = 'tel:9044587561';
+                phoneLink.style.cssText = 'color: var(--gold-lt); font-weight: bold;';
+                phoneLink.textContent = '(904) 458-7561';
+                
+                paragraph.appendChild(phoneLink);
+                paragraph.appendChild(document.createTextNode('.'));
+                
+                successMessage.appendChild(heading);
+                successMessage.appendChild(paragraph);
                 
                 // Hide form and show message
                 this.style.display = 'none';
