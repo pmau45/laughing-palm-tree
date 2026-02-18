@@ -5,9 +5,9 @@ import { SERVICES, SITE_URL, BUSINESS_INFO } from '@/lib/constants'
 import { JsonLd, generateServiceSchema, generateBreadcrumbSchema } from '@/components/seo/JsonLd'
 
 interface ServicePageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateStaticParams() {
@@ -17,7 +17,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
-  const service = SERVICES.find((s) => s.slug === params.slug)
+  const { slug } = await params
+  const service = SERVICES.find((s) => s.slug === slug)
 
   if (!service) {
     return {}
@@ -34,8 +35,9 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   }
 }
 
-export default function ServicePage({ params }: ServicePageProps) {
-  const service = SERVICES.find((s) => s.slug === params.slug)
+export default async function ServicePage({ params }: ServicePageProps) {
+  const { slug } = await params
+  const service = SERVICES.find((s) => s.slug === slug)
 
   if (!service) {
     notFound()

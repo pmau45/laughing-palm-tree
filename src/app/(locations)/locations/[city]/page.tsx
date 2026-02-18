@@ -5,9 +5,9 @@ import { SERVICE_AREAS, SERVICES, SITE_URL, BUSINESS_INFO } from '@/lib/constant
 import { JsonLd, generateLocalBusinessSchema, generateBreadcrumbSchema } from '@/components/seo/JsonLd'
 
 interface LocationPageProps {
-  params: {
+  params: Promise<{
     city: string
-  }
+  }>
 }
 
 export async function generateStaticParams() {
@@ -17,7 +17,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: LocationPageProps): Promise<Metadata> {
-  const location = SERVICE_AREAS.find((area) => area.slug === params.city)
+  const { city } = await params
+  const location = SERVICE_AREAS.find((area) => area.slug === city)
 
   if (!location) {
     return {}
@@ -34,8 +35,9 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
   }
 }
 
-export default function LocationPage({ params }: LocationPageProps) {
-  const location = SERVICE_AREAS.find((area) => area.slug === params.city)
+export default async function LocationPage({ params }: LocationPageProps) {
+  const { city } = await params
+  const location = SERVICE_AREAS.find((area) => area.slug === city)
 
   if (!location) {
     notFound()
