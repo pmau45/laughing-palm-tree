@@ -841,7 +841,8 @@
                 </div>
                 <div class="contact-form reveal">
                     <!-- Form is handled by JavaScript preventDefault for demo purposes. 
-                         To enable Netlify Forms, add netlify attribute and remove the preventDefault in JS -->
+                         To enable Netlify Forms, add netlify attribute and action attribute, 
+                         then remove the preventDefault in JS -->
                     <form name="contact-form" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -943,6 +944,8 @@
                 const formContainer = this.parentElement;
                 const successMessage = document.createElement('div');
                 successMessage.style.cssText = 'padding: 2rem; background: var(--gold-dk); border-radius: 8px; text-align: center; margin-top: 1rem;';
+                successMessage.setAttribute('role', 'status');
+                successMessage.setAttribute('aria-live', 'polite');
                 
                 const heading = document.createElement('h3');
                 heading.style.cssText = 'color: var(--gold); margin-bottom: 1rem;';
@@ -962,9 +965,14 @@
                 successMessage.appendChild(heading);
                 successMessage.appendChild(paragraph);
                 
-                // Hide form and show message
+                // Hide form visually but keep in DOM for accessibility
+                this.setAttribute('aria-hidden', 'true');
                 this.style.display = 'none';
                 formContainer.appendChild(successMessage);
+                
+                // Focus on success message for screen readers
+                successMessage.setAttribute('tabindex', '-1');
+                successMessage.focus();
                 
                 // Scroll to message
                 successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
