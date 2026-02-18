@@ -105,6 +105,20 @@ export default function HomePage() {
     }
   }, [])
 
+  const showErrorMessage = (container: HTMLElement, message: string) => {
+    const errorMessage = document.createElement('div')
+    errorMessage.style.cssText = 'padding: 1rem; background: #dc2626; border-radius: 8px; text-align: center; margin-top: 1rem; color: white;'
+    errorMessage.setAttribute('role', 'alert')
+    errorMessage.textContent = message
+    
+    container.appendChild(errorMessage)
+    
+    // Remove error message after 5 seconds
+    setTimeout(() => {
+      errorMessage.remove()
+    }, 5000)
+  }
+
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     
@@ -112,11 +126,17 @@ export default function HomePage() {
     
     const formData = new FormData(formRef.current)
     
+    // Convert FormData to URLSearchParams properly
+    const params = new URLSearchParams()
+    formData.forEach((value, key) => {
+      params.append(key, value.toString())
+    })
+    
     try {
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString(),
+        body: params.toString(),
       })
       
       if (response.ok) {
@@ -159,38 +179,14 @@ export default function HomePage() {
         // Scroll to message
         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' })
       } else {
-        // Show error message
         const formContainer = formRef.current.parentElement
         if (!formContainer) return
-        
-        const errorMessage = document.createElement('div')
-        errorMessage.style.cssText = 'padding: 1rem; background: #dc2626; border-radius: 8px; text-align: center; margin-top: 1rem; color: white;'
-        errorMessage.setAttribute('role', 'alert')
-        errorMessage.textContent = 'Failed to submit form. Please try again or call us at (904) 458-7561.'
-        
-        formContainer.appendChild(errorMessage)
-        
-        // Remove error message after 5 seconds
-        setTimeout(() => {
-          errorMessage.remove()
-        }, 5000)
+        showErrorMessage(formContainer, 'Failed to submit form. Please try again or call us at (904) 458-7561.')
       }
     } catch (error) {
-      // Show error message
       const formContainer = formRef.current.parentElement
       if (!formContainer) return
-      
-      const errorMessage = document.createElement('div')
-      errorMessage.style.cssText = 'padding: 1rem; background: #dc2626; border-radius: 8px; text-align: center; margin-top: 1rem; color: white;'
-      errorMessage.setAttribute('role', 'alert')
-      errorMessage.textContent = 'An error occurred. Please try again later or call us at (904) 458-7561.'
-      
-      formContainer.appendChild(errorMessage)
-      
-      // Remove error message after 5 seconds
-      setTimeout(() => {
-        errorMessage.remove()
-      }, 5000)
+      showErrorMessage(formContainer, 'An error occurred. Please try again later or call us at (904) 458-7561.')
     }
   }
 
@@ -387,7 +383,7 @@ export default function HomePage() {
             <div className="contact-form reveal">
               <form ref={formRef} name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleFormSubmit}>
                 <input type="hidden" name="form-name" value="contact" />
-                <input name="bot-field" className="hidden" />
+                <input name="bot-field" className="hidden" aria-hidden="true" tabIndex={-1} />
                 <div className="form-group">
                   <label htmlFor="name">Name</label>
                   <input type="text" id="name" name="name" placeholder="Your name" required />
