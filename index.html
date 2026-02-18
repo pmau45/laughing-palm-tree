@@ -22,7 +22,7 @@
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Axiom Canine | Dog Training Jacksonville FL">
-    <meta name="twitter:description" content="Transform your dog with Jacksonville's proven 3-pillar training method. Professional, results-driven dog training."
+    <meta name="twitter:description" content="Transform your dog with Jacksonville's proven 3-pillar training method. Professional, results-driven dog training.">
     
     <!-- Schema.org LocalBusiness Structured Data -->
     <script type="application/ld+json">
@@ -93,8 +93,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" as="style" onload="this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet"></noscript>
     
     <!-- Font Awesome -->
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
@@ -111,6 +111,7 @@
             --gold: #C8962E;
             --gold-lt: #E2B860;
             --gold-dk: #8A6518;
+            --gold-overlay: rgba(200, 150, 46, 0.1);
             --ink: #0C0C0C;
             --ink-2: #161616;
             --ink-3: #1E1E1E;
@@ -171,22 +172,6 @@
         
         p + p {
             margin-top: 0.75em;
-        }
-        
-        /* Font loading optimization */
-        @font-face {
-            font-family: 'Bebas Neue';
-            font-display: swap;
-        }
-        
-        @font-face {
-            font-family: 'DM Sans';
-            font-display: swap;
-        }
-        
-        @font-face {
-            font-family: 'DM Serif Display';
-            font-display: swap;
         }
         
         .serif {
@@ -294,7 +279,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(ellipse at top, rgba(200, 150, 46, 0.1) 0%, transparent 60%);
+            background: radial-gradient(ellipse at top, var(--gold-overlay) 0%, transparent 60%);
             pointer-events: none;
         }
         
@@ -371,10 +356,6 @@
            =================================== */
         section {
             padding: 40px 20px;
-        }
-        
-        #main-content {
-            /* Target for skip-to-content link */
         }
         
         .container {
@@ -820,10 +801,6 @@
             
             .menu-toggle {
                 display: flex;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
             }
             
             .hero p {
