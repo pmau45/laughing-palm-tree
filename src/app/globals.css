@@ -3,14 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --font-bebas: 'Bebas Neue', sans-serif;
-    --font-dm-sans: 'DM Sans', sans-serif;
-    --font-dm-serif: 'DM Serif Display', serif;
-  }
-
   body {
-    @apply font-body text-gray-900 antialiased;
+    @apply antialiased;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #111827;
   }
 
   h1,
@@ -19,7 +15,9 @@
   h4,
   h5,
   h6 {
-    @apply font-heading tracking-wide;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.025em;
   }
 }
 

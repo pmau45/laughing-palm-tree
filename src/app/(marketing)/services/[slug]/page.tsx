@@ -98,7 +98,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                 lasting behavioral changes that will improve your relationship and quality of life together.
               </p>
 
-              <h3 className="mt-8 text-xl font-heading font-bold text-gray-900">What's Included</h3>
+              <h3 className="mt-8 text-xl font-heading font-bold text-gray-900">What&apos;s Included</h3>
               <ul className="list-disc pl-6 text-gray-600">
                 <li>Initial consultation and assessment</li>
                 <li>Customized training plan</li>

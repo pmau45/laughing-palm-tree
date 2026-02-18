@@ -21,9 +21,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        heading: ['var(--font-bebas)', 'sans-serif'],
-        body: ['var(--font-dm-sans)', 'sans-serif'],
-        serif: ['var(--font-dm-serif)', 'serif'],
+        heading: ['system-ui', 'sans-serif'],
+        body: ['system-ui', 'sans-serif'],
+        serif: ['Georgia', 'serif'],
       },
     },
   },

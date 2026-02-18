@@ -1,30 +1,9 @@
 import type { Metadata } from 'next'
-import { Bebas_Neue, DM_Sans, DM_Serif_Display } from 'next/font/google'
 import './globals.css'
 import { BUSINESS_INFO, SITE_URL } from '@/lib/constants'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { JsonLd, generateLocalBusinessSchema } from '@/components/seo/JsonLd'
-
-const bebasNeue = Bebas_Neue({
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-bebas',
-  display: 'swap',
-})
-
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  variable: '--font-dm-sans',
-  display: 'swap',
-})
-
-const dmSerif = DM_Serif_Display({
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-dm-serif',
-  display: 'swap',
-})
 
 export const metadata: Metadata = {
   title: {
@@ -105,7 +84,7 @@ export default function RootLayout({
   })
 
   return (
-    <html lang="en" className={`${bebasNeue.variable} ${dmSans.variable} ${dmSerif.variable}`}>
+    <html lang="en">
       <head>
         <JsonLd data={localBusinessSchema} />
       </head>

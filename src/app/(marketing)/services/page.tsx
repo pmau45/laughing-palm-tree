@@ -44,7 +44,7 @@ export default function ServicesPage() {
             Not Sure Which Service Is Right for You?
           </h2>
           <p className="mb-6 text-gray-600">
-            Contact us for a free consultation and we'll help you choose the best training program for your dog.
+            Contact us for a free consultation and we&apos;ll help you choose the best training program for your dog.
           </p>
           <Link href="/contact" className="btn-primary">
             Schedule Consultation

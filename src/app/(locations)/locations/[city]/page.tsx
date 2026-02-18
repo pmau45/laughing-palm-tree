@@ -118,7 +118,7 @@ export default function LocationPage({ params }: LocationPageProps) {
             </h2>
             <div className="prose prose-lg max-w-none text-gray-600">
               <p>
-                We're proud to serve the {location.name} community with professional dog training services. 
+                We&apos;re proud to serve the {location.name} community with professional dog training services. 
                 Our experienced trainers understand the unique needs of dogs and their owners in the area.
               </p>
               <ul className="list-disc pl-6">
