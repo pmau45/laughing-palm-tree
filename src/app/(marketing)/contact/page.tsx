@@ -17,10 +17,15 @@ export default function ContactPage() {
     const formData = new FormData(form)
 
     try {
+      const params = new URLSearchParams()
+      Array.from(formData.entries()).forEach(([key, value]) => {
+        params.append(key, value.toString())
+      })
+
       const response = await fetch('/__forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString(),
+        body: params.toString(),
       })
 
       if (response.ok) {
