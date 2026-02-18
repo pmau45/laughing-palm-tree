@@ -97,7 +97,7 @@ Search for these values in `index.html` and update:
 #### Hero Section
 Locate the `.hero` section and modify:
 ```html
-<h1>Structure. Consistency. Results.</h1>
+<h1>Jacksonville Dog Training: Structure, Consistency, Results</h1>
 <p>Professional dog training in Jacksonville, FL</p>
 ```
 
