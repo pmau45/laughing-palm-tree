@@ -1,12 +1,48 @@
+'use client'
+
 import { Metadata } from 'next'
+import { useState } from 'react'
 import { BUSINESS_INFO } from '@/lib/constants'
 
-export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: 'Contact Axiom Canine for professional dog training services in Jacksonville, FL. Call us or fill out our contact form.',
-}
-
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setMessage(null)
+
+    const formData = new FormData(e.currentTarget)
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      message: formData.get('message'),
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (response.ok) {
+        setMessage({ type: 'success', text: 'Thank you! Your message has been sent successfully.' })
+        e.currentTarget.reset()
+      } else {
+        setMessage({ type: 'error', text: 'Failed to send message. Please try again.' })
+      }
+    } catch (error) {
+      setMessage({ type: 'error', text: 'An error occurred. Please try again later.' })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <div className="section-padding">
       <div className="container-custom">
@@ -23,7 +59,7 @@ export default function ContactPage() {
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Contact Form */}
             <div>
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700">
                     Name
@@ -75,8 +111,25 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <button type="submit" className="btn-primary w-full">
-                  Send Message
+                {message && (
+                  <div
+                    className={`rounded-md p-4 ${
+                      message.type === 'success'
+                        ? 'bg-green-50 text-green-800'
+                        : 'bg-red-50 text-red-800'
+                    }`}
+                    role="alert"
+                  >
+                    {message.text}
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
