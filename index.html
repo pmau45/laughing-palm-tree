@@ -6,16 +6,23 @@
     <title>Axiom Canine | Dog Training Jacksonville FL | Structure. Consistency. Results.</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Professional dog training in Jacksonville, FL. Transform your dog with our 3-pillar method: Structure, Consistency, Results. Serving Jacksonville, Ponte Vedra, and surrounding areas.">
+    <meta name="description" content="Transform your dog with Jacksonville's proven 3-pillar training method. Professional, results-driven dog training serving Jacksonville, Ponte Vedra & Northeast FL.">
     <meta name="keywords" content="dog training Jacksonville, dog trainer Jacksonville FL, puppy training, obedience training, behavior modification, Jacksonville dog training">
     <meta name="author" content="Axiom Canine">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#C8962E">
+    <link rel="canonical" href="https://axiomcanine.com">
     
     <!-- OpenGraph Tags -->
     <meta property="og:title" content="Axiom Canine | Dog Training Jacksonville FL">
-    <meta property="og:description" content="Professional dog training in Jacksonville, FL. Transform your dog with our 3-pillar method: Structure, Consistency, Results.">
+    <meta property="og:description" content="Transform your dog with Jacksonville's proven 3-pillar training method. Professional, results-driven dog training.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://axiomcanine.com">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1558929996-da64ba858215?auto=format&fit=crop&w=1200&q=80">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Axiom Canine | Dog Training Jacksonville FL">
+    <meta name="twitter:description" content="Transform your dog with Jacksonville's proven 3-pillar training method. Professional, results-driven dog training.">
     
     <!-- Schema.org LocalBusiness Structured Data -->
     <script type="application/ld+json">
@@ -24,12 +31,19 @@
       "@type": "LocalBusiness",
       "name": "Axiom Canine",
       "description": "Professional dog training services in Jacksonville, FL",
+      "url": "https://axiomcanine.com",
       "telephone": "(904) 458-7561",
+      "image": "https://axiomcanine.com/logo.png",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Jacksonville",
         "addressRegion": "FL",
         "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "30.3322",
+        "longitude": "-81.6557"
       },
       "areaServed": [
         "Jacksonville, FL",
@@ -38,27 +52,66 @@
         "Orange Park, FL",
         "St. Augustine, FL"
       ],
-      "priceRange": "$$"
+      "priceRange": "$$",
+      "sameAs": [
+        "https://instagram.com/axiomcanine",
+        "https://facebook.com/axiomcanine"
+      ]
+    }
+    </script>
+    
+    <!-- Schema.org ProfessionalService Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Axiom Canine Dog Training",
+      "description": "Professional dog training services specializing in obedience training, behavior modification, and puppy training",
+      "url": "https://axiomcanine.com",
+      "telephone": "(904) 458-7561",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jacksonville",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Jacksonville"
+      },
+      "serviceType": [
+        "Dog Training",
+        "Obedience Training",
+        "Behavior Modification",
+        "Puppy Training"
+      ]
     }
     </script>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" as="style" onload="this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet"></noscript>
     
     <!-- Font Awesome -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐕</text></svg>">
     
     <style>
-        /* CSS Variables - Design System */
+        /* ===================================
+           CSS VARIABLES - DESIGN SYSTEM
+           =================================== */
         :root {
             --gold: #C8962E;
             --gold-lt: #E2B860;
             --gold-dk: #8A6518;
+            --gold-overlay: rgba(200, 150, 46, 0.1);
             --ink: #0C0C0C;
             --ink-2: #161616;
             --ink-3: #1E1E1E;
@@ -68,7 +121,9 @@
             --white: #FFFFFF;
         }
         
-        /* Reset and Base Styles */
+        /* ===================================
+           RESET AND BASE STYLES
+           =================================== */
         * {
             margin: 0;
             padding: 0;
@@ -77,6 +132,7 @@
         
         html {
             scroll-behavior: smooth;
+            font-size: 16px; /* Base font size for mobile accessibility */
         }
         
         body {
@@ -84,9 +140,29 @@
             background-color: var(--ink);
             color: var(--light);
             line-height: 1.5;
+            font-size: 1rem;
         }
         
-        /* Typography */
+        /* Skip to content link for accessibility */
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--gold);
+            color: var(--ink);
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 2000;
+            font-weight: 600;
+        }
+        
+        .skip-to-content:focus {
+            top: 0;
+        }
+        
+        /* ===================================
+           TYPOGRAPHY
+           =================================== */
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Bebas Neue', sans-serif;
             letter-spacing: 0.05em;
@@ -102,7 +178,18 @@
             font-family: 'DM Serif Display', serif;
         }
         
-        /* Navigation */
+        /* Focus styles for accessibility */
+        a:focus,
+        button:focus,
+        input:focus,
+        textarea:focus {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+        
+        /* ===================================
+           NAVIGATION
+           =================================== */
         nav {
             position: fixed;
             top: 0;
@@ -142,42 +229,76 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
+            padding: 8px 12px; /* Ensure minimum touch target */
+            display: inline-block;
         }
         
         .nav-links a:hover {
             color: var(--gold);
         }
         
-        /* Hero Section */
+        /* Mobile menu toggle button */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+            min-width: 44px;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .menu-toggle:hover {
+            color: var(--gold-lt);
+        }
+        
+        /* ===================================
+           HERO SECTION
+           =================================== */
         .hero {
             min-height: 55vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(rgba(12, 12, 12, 0.6), rgba(12, 12, 12, 0.6)),
-                        url('https://images.unsplash.com/photo-1558929996-da64ba858215?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            /* Replaced stock image with gradient design */
+            background: linear-gradient(135deg, var(--ink) 0%, var(--ink-2) 50%, var(--ink-3) 100%);
             position: relative;
-            padding: 30px 20px;
+            padding: 80px 20px 30px;
+        }
+        
+        /* Add decorative gradient overlay for visual interest */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at top, var(--gold-overlay) 0%, transparent 60%);
+            pointer-events: none;
         }
         
         .hero-content {
             max-width: 800px;
             padding: 0.5rem;
+            position: relative;
+            z-index: 1;
         }
         
         .hero h1 {
-            font-size: 5rem;
+            font-size: 2.5rem; /* Mobile-first responsive sizing */
             color: var(--gold);
             margin-bottom: 0.3rem;
             text-transform: uppercase;
         }
         
         .hero p {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: var(--light);
             margin-bottom: 1rem;
             font-weight: 300;
@@ -190,8 +311,13 @@
             flex-wrap: wrap;
         }
         
+        /* ===================================
+           BUTTONS
+           =================================== */
         .btn {
-            padding: 1rem 2rem;
+            padding: 14px 24px; /* Optimized for 48px minimum height */
+            min-height: 48px; /* Mobile touch target */
+            min-width: 44px;
             font-size: 1.1rem;
             font-weight: 600;
             text-decoration: none;
@@ -200,6 +326,7 @@
             transition: all 0.3s;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
         }
         
@@ -224,7 +351,9 @@
             color: var(--ink);
         }
         
-        /* Section Styles */
+        /* ===================================
+           SECTION STYLES
+           =================================== */
         section {
             padding: 40px 20px;
         }
@@ -253,7 +382,9 @@
             margin: 0 auto;
         }
         
-        /* Reality Section */
+        /* ===================================
+           REALITY SECTION
+           =================================== */
         .reality {
             background-color: var(--ink-2);
         }
@@ -276,7 +407,9 @@
             line-height: 1.5;
         }
         
-        /* Manifesto Quote */
+        /* ===================================
+           MANIFESTO QUOTE
+           =================================== */
         .manifesto {
             background-color: var(--gold);
             color: var(--ink);
@@ -293,7 +426,9 @@
             line-height: 1.45;
         }
         
-        /* Pillars Section */
+        /* ===================================
+           PILLARS SECTION
+           =================================== */
         .pillars {
             background-color: var(--ink);
         }
@@ -310,6 +445,7 @@
             border: 1px solid var(--rule);
             text-align: center;
             transition: transform 0.3s, border-color 0.3s;
+            min-height: 44px; /* Ensure adequate touch target */
         }
         
         .pillar-card:hover {
@@ -335,7 +471,9 @@
             line-height: 1.5;
         }
         
-        /* Problems Section */
+        /* ===================================
+           PROBLEMS SECTION
+           =================================== */
         .problems {
             background-color: var(--ink-2);
         }
@@ -351,6 +489,7 @@
             padding: 20px;
             border: 1px solid var(--rule);
             transition: transform 0.3s, border-color 0.3s;
+            min-height: 44px; /* Ensure adequate touch target */
         }
         
         .problem-card:hover {
@@ -375,7 +514,9 @@
             font-size: 0.95rem;
         }
         
-        /* Service Area Section */
+        /* ===================================
+           SERVICE AREA SECTION
+           =================================== */
         .service-area {
             background-color: var(--ink);
         }
@@ -383,15 +524,19 @@
         .locations-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 0.75rem;
+            gap: 8px; /* Minimum spacing between touch targets */
         }
         
         .location-item {
             background-color: var(--ink-3);
-            padding: 0.75rem;
+            padding: 12px;
+            min-height: 44px; /* Mobile touch target */
             text-align: center;
             border: 1px solid var(--rule);
             transition: background-color 0.3s, color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .location-item:hover {
@@ -408,7 +553,9 @@
             color: var(--ink);
         }
         
-        /* Contact Section */
+        /* ===================================
+           CONTACT SECTION
+           =================================== */
         .contact {
             background-color: var(--ink-2);
         }
@@ -447,6 +594,9 @@
             color: var(--muted);
         }
         
+        /* ===================================
+           FORMS
+           =================================== */
         .contact-form {
             background-color: var(--ink-3);
             padding: 20px;
@@ -467,7 +617,8 @@
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 0.75rem;
+            padding: 12px;
+            min-height: 48px; /* Mobile touch target */
             background-color: var(--ink-2);
             border: 1px solid var(--rule);
             color: var(--light);
@@ -492,7 +643,9 @@
             flex-wrap: wrap;
         }
         
-        /* Footer */
+        /* ===================================
+           FOOTER
+           =================================== */
         footer {
             background-color: var(--ink-3);
             padding: 2rem 2rem 1rem;
@@ -551,8 +704,8 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 44px; /* Mobile touch target */
+            height: 44px;
             background-color: var(--ink-2);
             border: 1px solid var(--rule);
             color: var(--gold);
@@ -575,7 +728,9 @@
             font-size: 0.9rem;
         }
         
-        /* Scroll Reveal Animation */
+        /* ===================================
+           SCROLL REVEAL ANIMATION
+           =================================== */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -587,14 +742,65 @@
             transform: translateY(0);
         }
         
-        /* Responsive Design */
-        @media (max-width: 900px) {
-            .nav-links {
-                display: none;
+        /* ===================================
+           RESPONSIVE DESIGN - MOBILE FIRST
+           =================================== */
+        
+        /* Tablet and above - increase hero text size */
+        @media (min-width: 641px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Desktop - full size hero text */
+        @media (min-width: 901px) {
+            .hero {
+                padding: 100px 20px 40px;
             }
             
             .hero h1 {
-                font-size: 3rem;
+                font-size: 5rem;
+            }
+        }
+        
+        /* Mobile adjustments */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--ink);
+                flex-direction: column;
+                padding: 1rem;
+                border-bottom: 1px solid var(--rule);
+                gap: 0;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                width: 100%;
+            }
+            
+            .nav-links a {
+                display: block;
+                width: 100%;
+                padding: 12px 16px;
+                min-height: 48px; /* Mobile touch target */
+                border-bottom: 1px solid var(--rule);
+            }
+            
+            .menu-toggle {
+                display: flex;
             }
             
             .hero p {
@@ -622,11 +828,23 @@
         
         @media (max-width: 640px) {
             section {
-                padding: 30px 20px;
+                padding: 30px 16px; /* Reduce mobile padding */
+            }
+            
+            .nav-container {
+                padding: 1rem 1rem;
+            }
+            
+            .hero {
+                padding: 80px 16px 30px;
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
             }
             
             .section-header h2 {
@@ -641,6 +859,7 @@
             
             .cta-buttons {
                 flex-direction: column;
+                width: 100%;
             }
             
             .btn {
@@ -651,15 +870,38 @@
             .manifesto blockquote {
                 font-size: 1.5rem;
             }
+            
+            .manifesto {
+                padding: 1.5rem 1rem;
+            }
+            
+            .contact-form {
+                padding: 16px;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .form-actions .btn {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
     <!-- Navigation -->
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="/" class="logo">AXIOM CANINE</a>
-            <ul class="nav-links">
+            <a href="/" class="logo" aria-label="Axiom Canine Home">AXIOM CANINE</a>
+            <button class="menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="main-nav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="main-nav">
                 <li><a href="#reality">The Reality</a></li>
                 <li><a href="#pillars">Our Method</a></li>
                 <li><a href="#problems">Common Issues</a></li>
@@ -669,7 +911,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="main-content">
         <div class="hero-content">
             <h1>Structure. Consistency. Results.</h1>
             <p>Professional dog training in Jacksonville, FL</p>
@@ -896,8 +1138,41 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Scroll Reveal Animation -->
+    <!-- JavaScript for Scroll Reveal Animation and Mobile Menu -->
     <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isExpanded);
+                navLinks.classList.toggle('active');
+                
+                // Change icon
+                const icon = this.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                }
+            });
+            
+            // Close menu when clicking a link
+            const navLinksItems = navLinks.querySelectorAll('a');
+            navLinksItems.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            });
+        }
+        
         // Scroll Reveal Animation
         const observerOptions = {
             threshold: 0.1,
