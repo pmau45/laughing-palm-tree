@@ -80,14 +80,19 @@
             font-family: 'DM Sans', sans-serif;
             background-color: var(--ink);
             color: var(--light);
-            line-height: 1.6;
+            line-height: 1.5;
         }
         
         /* Typography */
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Bebas Neue', sans-serif;
             letter-spacing: 0.05em;
-            line-height: 1.2;
+            line-height: 1.15;
+            margin-bottom: 0.5em;
+        }
+        
+        p + p {
+            margin-top: 0.75em;
         }
         
         .serif {
@@ -142,7 +147,7 @@
         
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -154,24 +159,25 @@
             background-position: center;
             background-attachment: fixed;
             position: relative;
+            padding: 40px 20px;
         }
         
         .hero-content {
             max-width: 800px;
-            padding: 2rem;
+            padding: 1rem;
         }
         
         .hero h1 {
             font-size: 5rem;
             color: var(--gold);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             text-transform: uppercase;
         }
         
         .hero p {
             font-size: 1.5rem;
             color: var(--light);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             font-weight: 300;
         }
         
@@ -218,7 +224,7 @@
         
         /* Section Styles */
         section {
-            padding: 5rem 2rem;
+            padding: 60px 20px;
         }
         
         .container {
@@ -228,13 +234,13 @@
         
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 2.5rem;
         }
         
         .section-header h2 {
             font-size: 3.5rem;
             color: var(--gold);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             text-transform: uppercase;
         }
         
@@ -253,19 +259,19 @@
         .reality-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
+            gap: 24px;
         }
         
         .reality-column h3 {
             font-size: 2rem;
             color: var(--gold);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
         
         .reality-column p {
             color: var(--light);
-            margin-bottom: 1rem;
-            line-height: 1.8;
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
         }
         
         /* Manifesto Quote */
@@ -273,7 +279,7 @@
             background-color: var(--gold);
             color: var(--ink);
             text-align: center;
-            padding: 3rem 2rem;
+            padding: 2.5rem 2rem;
         }
         
         .manifesto blockquote {
@@ -282,7 +288,7 @@
             font-style: italic;
             max-width: 900px;
             margin: 0 auto;
-            line-height: 1.5;
+            line-height: 1.45;
         }
         
         /* Pillars Section */
@@ -293,12 +299,12 @@
         .pillars-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 20px;
         }
         
         .pillar-card {
             background-color: var(--ink-3);
-            padding: 2rem;
+            padding: 24px;
             border: 1px solid var(--rule);
             text-align: center;
             transition: transform 0.3s, border-color 0.3s;
@@ -312,19 +318,19 @@
         .pillar-card i {
             font-size: 3rem;
             color: var(--gold);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
         
         .pillar-card h3 {
             font-size: 2rem;
             color: var(--gold);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             text-transform: uppercase;
         }
         
         .pillar-card p {
             color: var(--light);
-            line-height: 1.8;
+            line-height: 1.5;
         }
         
         /* Problems Section */
@@ -335,12 +341,12 @@
         .problems-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 20px;
         }
         
         .problem-card {
             background-color: var(--ink-3);
-            padding: 2rem;
+            padding: 24px;
             border: 1px solid var(--rule);
             transition: transform 0.3s, border-color 0.3s;
         }
@@ -353,7 +359,7 @@
         .problem-card i {
             font-size: 2.5rem;
             color: var(--gold);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
         
         .problem-card h3 {
@@ -408,13 +414,13 @@
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1.5fr;
-            gap: 3rem;
+            gap: 24px;
         }
         
         .trust-badges {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 20px;
         }
         
         .trust-badge {
@@ -441,7 +447,7 @@
         
         .contact-form {
             background-color: var(--ink-3);
-            padding: 2rem;
+            padding: 24px;
             border: 1px solid var(--rule);
         }
         
@@ -487,7 +493,7 @@
         /* Footer */
         footer {
             background-color: var(--ink-3);
-            padding: 3rem 2rem 1rem;
+            padding: 2.5rem 2rem 1rem;
             border-top: 1px solid var(--rule);
         }
         
@@ -496,7 +502,7 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
+            gap: 24px;
             margin-bottom: 2rem;
         }
         
@@ -507,7 +513,7 @@
         
         .footer-brand .logo {
             font-size: 2.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
         
         .footer-brand p {
@@ -517,7 +523,7 @@
         .footer-section h4 {
             font-size: 1.5rem;
             color: var(--gold);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
         
         .footer-section p,
@@ -614,7 +620,7 @@
         
         @media (max-width: 640px) {
             section {
-                padding: 3rem 1rem;
+                padding: 40px 20px;
             }
             
             .hero h1 {
