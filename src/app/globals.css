@@ -84,6 +84,11 @@ textarea:focus {
     outline-offset: 2px;
 }
 
+/* Hidden utility class for honeypot fields */
+.hidden {
+    display: none;
+}
+
 /* ===================================
    NAVIGATION
    =================================== */

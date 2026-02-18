@@ -105,49 +105,96 @@ export default function HomePage() {
     }
   }, [])
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const showErrorMessage = (container: HTMLElement, message: string) => {
+    const errorMessage = document.createElement('div')
+    errorMessage.style.cssText = 'padding: 1rem; background: #dc2626; border-radius: 8px; text-align: center; margin-top: 1rem; color: white;'
+    errorMessage.setAttribute('role', 'alert')
+    errorMessage.setAttribute('aria-live', 'assertive')
+    errorMessage.textContent = message
+    
+    container.appendChild(errorMessage)
+    
+    // Remove error message after 5 seconds
+    setTimeout(() => {
+      errorMessage.remove()
+    }, 5000)
+  }
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     
     if (!formRef.current) return
     
-    // Show success message using DOM methods for security
     const formContainer = formRef.current.parentElement
     if (!formContainer) return
     
-    const successMessage = document.createElement('div')
-    successMessage.style.cssText = 'padding: 2rem; background: var(--gold-dk); border-radius: 8px; text-align: center; margin-top: 1rem;'
-    successMessage.setAttribute('role', 'status')
-    successMessage.setAttribute('aria-live', 'polite')
+    const formData = new FormData(formRef.current)
     
-    const heading = document.createElement('h3')
-    heading.style.cssText = 'color: var(--gold); margin-bottom: 1rem;'
-    heading.textContent = 'Thank you for your interest!'
+    // Convert FormData to URLSearchParams properly
+    // Note: This implementation does not support file uploads
+    const params = new URLSearchParams()
+    formData.forEach((value, key) => {
+      // Only append string values (no file upload support)
+      if (typeof value === 'string') {
+        params.append(key, value)
+      }
+    })
     
-    const paragraph = document.createElement('p')
-    paragraph.textContent = 'We will contact you soon. For immediate assistance, please call '
-    
-    const phoneLink = document.createElement('a')
-    phoneLink.href = 'tel:9044587561'
-    phoneLink.style.cssText = 'color: var(--gold-lt); font-weight: bold;'
-    phoneLink.textContent = '(904) 458-7561'
-    
-    paragraph.appendChild(phoneLink)
-    paragraph.appendChild(document.createTextNode('.'))
-    
-    successMessage.appendChild(heading)
-    successMessage.appendChild(paragraph)
-    
-    // Hide form visually but keep in DOM for accessibility
-    formRef.current.setAttribute('aria-hidden', 'true')
-    formRef.current.style.display = 'none'
-    formContainer.appendChild(successMessage)
-    
-    // Focus on success message for screen readers
-    successMessage.setAttribute('tabindex', '-1')
-    successMessage.focus()
-    
-    // Scroll to message
-    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params.toString(),
+      })
+      
+      if (response.ok) {
+        // Show success message using DOM methods for security
+        const successMessage = document.createElement('div')
+        successMessage.style.cssText = 'padding: 2rem; background: var(--gold-dk); border-radius: 8px; text-align: center; margin-top: 1rem;'
+        successMessage.setAttribute('role', 'status')
+        successMessage.setAttribute('aria-live', 'polite')
+        
+        const heading = document.createElement('h3')
+        heading.style.cssText = 'color: var(--gold); margin-bottom: 1rem;'
+        heading.textContent = 'Thank you for your interest!'
+        
+        const paragraph = document.createElement('p')
+        paragraph.textContent = 'We will contact you soon. For immediate assistance, please call '
+        
+        const phoneLink = document.createElement('a')
+        phoneLink.href = 'tel:9044587561'
+        phoneLink.style.cssText = 'color: var(--gold-lt); font-weight: bold;'
+        phoneLink.textContent = '(904) 458-7561'
+        
+        paragraph.appendChild(phoneLink)
+        paragraph.appendChild(document.createTextNode('.'))
+        
+        successMessage.appendChild(heading)
+        successMessage.appendChild(paragraph)
+        
+        // Hide form visually and make it inaccessible
+        formRef.current.setAttribute('aria-hidden', 'true')
+        formRef.current.style.display = 'none'
+        // Disable all form inputs to prevent keyboard navigation
+        const inputs = formRef.current.querySelectorAll('input, textarea, button')
+        inputs.forEach((input) => {
+          (input as HTMLInputElement | HTMLTextAreaElement | HTMLButtonElement).disabled = true
+        })
+        
+        formContainer.appendChild(successMessage)
+        
+        // Focus on success message for screen readers
+        successMessage.setAttribute('tabindex', '-1')
+        successMessage.focus()
+        
+        // Scroll to message
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      } else {
+        showErrorMessage(formContainer, `Failed to submit form (Status: ${response.status}). Please try again or call us at (904) 458-7561.`)
+      }
+    } catch (error) {
+      showErrorMessage(formContainer, 'An error occurred. Please try again later or call us at (904) 458-7561.')
+    }
   }
 
   return (
@@ -341,7 +388,9 @@ export default function HomePage() {
               </div>
             </div>
             <div className="contact-form reveal">
-              <form ref={formRef} name="contact-form" method="POST" action="#contact" onSubmit={handleFormSubmit}>
+              <form ref={formRef} name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleFormSubmit}>
+                <input type="hidden" name="form-name" value="contact" />
+                <input name="bot-field" className="hidden" aria-hidden="true" tabIndex={-1} />
                 <div className="form-group">
                   <label htmlFor="name">Name</label>
                   <input type="text" id="name" name="name" placeholder="Your name" required />
