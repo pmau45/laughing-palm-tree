@@ -1,0 +1,121 @@
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import Link from 'next/link'
+import { SERVICES, SITE_URL, BUSINESS_INFO } from '@/lib/constants'
+import { JsonLd, generateServiceSchema, generateBreadcrumbSchema } from '@/components/seo/JsonLd'
+
+interface ServicePageProps {
+  params: {
+    slug: string
+  }
+}
+
+export async function generateStaticParams() {
+  return SERVICES.map((service) => ({
+    slug: service.slug,
+  }))
+}
+
+export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
+  const service = SERVICES.find((s) => s.slug === params.slug)
+
+  if (!service) {
+    return {}
+  }
+
+  return {
+    title: service.title,
+    description: service.description,
+    openGraph: {
+      title: `${service.title} | ${BUSINESS_INFO.name}`,
+      description: service.description,
+      url: `${SITE_URL}/services/${service.slug}`,
+    },
+  }
+}
+
+export default function ServicePage({ params }: ServicePageProps) {
+  const service = SERVICES.find((s) => s.slug === params.slug)
+
+  if (!service) {
+    notFound()
+  }
+
+  const serviceSchema = generateServiceSchema({
+    name: service.title,
+    description: service.description,
+    provider: {
+      name: BUSINESS_INFO.name,
+      url: SITE_URL,
+    },
+    areaServed: ['Jacksonville', 'Ponte Vedra', 'Mandarin', 'Orange Park', 'St. Augustine'],
+    serviceType: 'Dog Training',
+    url: `${SITE_URL}/services/${service.slug}`,
+  })
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: SITE_URL },
+    { name: 'Services', url: `${SITE_URL}/services` },
+    { name: service.title, url: `${SITE_URL}/services/${service.slug}` },
+  ])
+
+  return (
+    <>
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbSchema} />
+
+      <div className="section-padding">
+        <div className="container-custom">
+          <div className="mx-auto max-w-3xl">
+            {/* Breadcrumb */}
+            <nav className="mb-8 text-sm text-gray-600">
+              <Link href="/" className="hover:text-primary">
+                Home
+              </Link>
+              {' / '}
+              <Link href="/services" className="hover:text-primary">
+                Services
+              </Link>
+              {' / '}
+              <span className="text-gray-900">{service.title}</span>
+            </nav>
+
+            <h1 className="mb-4 text-4xl font-heading font-bold text-gray-900 md:text-5xl">
+              {service.title}
+            </h1>
+
+            <p className="mb-8 text-xl text-gray-600">{service.description}</p>
+
+            <div className="rounded-lg bg-primary/10 p-6">
+              <p className="text-2xl font-bold text-primary">{service.price}</p>
+            </div>
+
+            <div className="mt-12 prose prose-lg max-w-none">
+              <h2 className="text-2xl font-heading font-bold text-gray-900">About This Service</h2>
+              <p className="text-gray-600">
+                Our {service.title.toLowerCase()} program is designed to help you achieve your training goals
+                through proven methods and personalized attention. We work with you and your dog to create
+                lasting behavioral changes that will improve your relationship and quality of life together.
+              </p>
+
+              <h3 className="mt-8 text-xl font-heading font-bold text-gray-900">What's Included</h3>
+              <ul className="list-disc pl-6 text-gray-600">
+                <li>Initial consultation and assessment</li>
+                <li>Customized training plan</li>
+                <li>One-on-one training sessions</li>
+                <li>Ongoing support and guidance</li>
+                <li>Training materials and resources</li>
+              </ul>
+
+              <div className="mt-12">
+                <Link href="/contact" className="btn-primary">
+                  Get Started
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
