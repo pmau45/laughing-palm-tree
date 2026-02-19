@@ -87,6 +87,17 @@ p + p {
     font-family: 'DM Serif Display', serif;
 }
 
+/* Global anchor styles */
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--gold);
+}
+
 /* Focus styles for accessibility */
 a:focus,
 button:focus,
@@ -275,6 +286,7 @@ nav {
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(200, 150, 46, 0.3);
+    color: var(--ink);
 }
 
 .btn-secondary {
