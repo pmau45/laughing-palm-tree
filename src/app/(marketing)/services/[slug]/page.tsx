@@ -92,26 +92,13 @@ export default async function ServicePage({ params }: ServicePageProps) {
               <p className="text-2xl font-bold text-primary">{service.price}</p>
             </div>
 
-            <div className="mt-12 prose prose-lg max-w-none">
-              <h2 className="text-2xl font-heading font-bold text-gray-900">About This Service</h2>
-              <p className="text-gray-600">
-                Our {service.title.toLowerCase()} program is designed to help you achieve your training goals
-                through proven methods and personalized attention. We work with you and your dog to create
-                lasting behavioral changes that will improve your relationship and quality of life together.
+            <div className="prose prose-lg text-center">
+              <p className="text-xl text-gray-600">
+                Content coming soon. Check back later!
               </p>
-
-              <h3 className="mt-8 text-xl font-heading font-bold text-gray-900">What&apos;s Included</h3>
-              <ul className="list-disc pl-6 text-gray-600">
-                <li>Initial consultation and assessment</li>
-                <li>Customized training plan</li>
-                <li>One-on-one training sessions</li>
-                <li>Ongoing support and guidance</li>
-                <li>Training materials and resources</li>
-              </ul>
-
-              <div className="mt-12">
-                <Link href="/contact" className="btn-primary">
-                  Get Started
+              <div className="mt-8">
+                <Link href="/services" className="text-primary hover:underline">
+                  ← Back to Services
                 </Link>
               </div>
             </div>
