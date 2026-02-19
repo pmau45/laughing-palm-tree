@@ -1,7 +1,8 @@
 export const BUSINESS_INFO = {
   name: 'Axiom Canine',
   tagline: 'Professional Dog Training in Jacksonville, FL',
-  phone: '(904) 555-0123',
+  phone: '(904) 458-7561',
+  phoneTel: '9044587561',
   email: 'info@axiomcanine.com',
   address: {
     street: '123 Training Way',
