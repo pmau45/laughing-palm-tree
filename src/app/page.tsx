@@ -219,7 +219,6 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero-content">
           <h1>Jacksonville Dog Training: Structure, Consistency, Results</h1>
-          <p className="hero-subheader">Structure. Consistency. Results.</p>
           <p>Professional dog training in Jacksonville, FL</p>
           <div className="cta-buttons">
             <a href="#contact" className="btn btn-primary">Request Free Assessment →</a>
