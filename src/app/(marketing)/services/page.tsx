@@ -1,6 +1,4 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
-import { SERVICES } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Dog Training Services',
@@ -20,35 +18,10 @@ export default function ServicesPage() {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((service) => (
-            <Link
-              key={service.slug}
-              href={`/services/${service.slug}`}
-              className="group rounded-lg border border-gray-200 p-8 transition-all hover:border-primary hover:shadow-xl"
-            >
-              <h2 className="mb-4 text-2xl font-heading font-bold text-gray-900 group-hover:text-primary">
-                {service.title}
-              </h2>
-              <p className="mb-6 text-gray-600">{service.description}</p>
-              <p className="text-lg font-semibold text-primary">{service.price}</p>
-              <div className="mt-4 text-sm font-medium text-primary group-hover:underline">
-                Learn More →
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        <div className="mt-16 rounded-lg bg-gray-50 p-8 text-center">
-          <h2 className="mb-4 text-2xl font-heading font-bold text-gray-900">
-            Not Sure Which Service Is Right for You?
-          </h2>
-          <p className="mb-6 text-gray-600">
-            Contact us for a free consultation and we&apos;ll help you choose the best training program for your dog.
+        <div className="text-center">
+          <p className="text-xl text-gray-600">
+            Content coming soon. Check back later!
           </p>
-          <Link href="/contact" className="btn-primary">
-            Schedule Consultation
-          </Link>
         </div>
       </div>
     </div>

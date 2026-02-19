@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { SERVICE_AREAS, SERVICES, SITE_URL, BUSINESS_INFO } from '@/lib/constants'
+import { SERVICE_AREAS, SITE_URL, BUSINESS_INFO } from '@/lib/constants'
 import { JsonLd, generateLocalBusinessSchema, generateBreadcrumbSchema } from '@/components/seo/JsonLd'
 
 interface LocationPageProps {
@@ -91,67 +91,13 @@ export default async function LocationPage({ params }: LocationPageProps) {
             </p>
           </div>
 
-          {/* Services Section */}
-          <div className="mb-16">
-            <h2 className="mb-8 text-center text-3xl font-heading font-bold text-gray-900">
-              Services in {location.name}
-            </h2>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {SERVICES.map((service) => (
-                <Link
-                  key={service.slug}
-                  href={`/services/${service.slug}`}
-                  className="group rounded-lg border border-gray-200 p-6 transition-all hover:border-primary hover:shadow-lg"
-                >
-                  <h3 className="mb-3 text-xl font-heading font-bold text-gray-900 group-hover:text-primary">
-                    {service.title}
-                  </h3>
-                  <p className="mb-4 text-gray-600">{service.description}</p>
-                  <p className="font-semibold text-primary">{service.price}</p>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* About the Area */}
-          <div className="mb-16 rounded-lg bg-gray-50 p-8">
-            <h2 className="mb-4 text-2xl font-heading font-bold text-gray-900">
-              Why Choose Us in {location.name}?
-            </h2>
-            <div className="prose prose-lg max-w-none text-gray-600">
-              <p>
-                We&apos;re proud to serve the {location.name} community with professional dog training services. 
-                Our experienced trainers understand the unique needs of dogs and their owners in the area.
-              </p>
-              <ul className="list-disc pl-6">
-                <li>Local expertise and knowledge</li>
-                <li>Certified professional trainers</li>
-                <li>Proven training methods</li>
-                <li>Flexible scheduling</li>
-                <li>Ongoing support</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* CTA Section */}
-          <div className="rounded-lg bg-primary p-8 text-center text-white md:p-12">
-            <h2 className="mb-4 text-3xl font-heading font-bold">
-              Ready to Get Started in {location.name}?
-            </h2>
-            <p className="mb-6 text-lg text-blue-100">
-              Contact us today for a free consultation
+          <div className="text-center">
+            <p className="text-xl text-gray-600 mb-6">
+              Content coming soon. Check back later!
             </p>
-            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <Link href="/contact" className="btn-primary bg-white text-primary hover:bg-gray-100">
-                Schedule Consultation
-              </Link>
-              <a
-                href={`tel:${BUSINESS_INFO.phone}`}
-                className="btn-secondary border-white text-white hover:bg-white hover:text-primary"
-              >
-                {BUSINESS_INFO.phone}
-              </a>
-            </div>
+            <p className="text-gray-600">
+              Serving {location.name} and surrounding areas with professional dog training services.
+            </p>
           </div>
         </div>
       </div>

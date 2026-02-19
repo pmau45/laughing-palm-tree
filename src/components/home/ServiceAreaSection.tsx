@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 
 export default function ServiceAreaSection() {
@@ -9,15 +10,15 @@ export default function ServiceAreaSection() {
           <p>Professional dog training throughout Northeast Florida</p>
         </div>
         <div className="locations-grid">
-          <div className="location-item reveal"><FaMapMarkerAlt /> Jacksonville</div>
-          <div className="location-item reveal"><FaMapMarkerAlt /> Ponte Vedra Beach</div>
-          <div className="location-item reveal"><FaMapMarkerAlt /> Mandarin</div>
+          <Link href="/locations/jacksonville" className="location-item reveal hover:text-primary"><FaMapMarkerAlt /> Jacksonville</Link>
+          <Link href="/locations/ponte-vedra" className="location-item reveal hover:text-primary"><FaMapMarkerAlt /> Ponte Vedra Beach</Link>
+          <Link href="/locations/mandarin" className="location-item reveal hover:text-primary"><FaMapMarkerAlt /> Mandarin</Link>
           <div className="location-item reveal"><FaMapMarkerAlt /> Southside</div>
           <div className="location-item reveal"><FaMapMarkerAlt /> Riverside</div>
           <div className="location-item reveal"><FaMapMarkerAlt /> Avondale</div>
-          <div className="location-item reveal"><FaMapMarkerAlt /> Orange Park</div>
+          <Link href="/locations/orange-park" className="location-item reveal hover:text-primary"><FaMapMarkerAlt /> Orange Park</Link>
           <div className="location-item reveal"><FaMapMarkerAlt /> Fleming Island</div>
-          <div className="location-item reveal"><FaMapMarkerAlt /> St. Augustine</div>
+          <Link href="/locations/st-augustine" className="location-item reveal hover:text-primary"><FaMapMarkerAlt /> St. Augustine</Link>
           <div className="location-item reveal"><FaMapMarkerAlt /> Nocatee</div>
           <div className="location-item reveal"><FaMapMarkerAlt /> Fernandina Beach</div>
           <div className="location-item reveal"><FaMapMarkerAlt /> Yulee</div>
