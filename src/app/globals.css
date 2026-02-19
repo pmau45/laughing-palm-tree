@@ -307,9 +307,19 @@ section {
     padding: 40px 20px;
 }
 
+.section-padding {
+    padding: 60px 20px;
+}
+
 .container {
     max-width: 1400px;
     margin: 0 auto;
+}
+
+.container-custom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .section-header {
@@ -771,6 +781,24 @@ footer {
     text-align: center;
     color: var(--muted);
     font-size: 0.9rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--muted);
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
 }
 
 /* ===================================

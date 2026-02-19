@@ -19,10 +19,10 @@ export function generateLocalBusinessSchema(business: {
   description?: string
   image?: string
   address: {
-    street: string
+    street?: string
     city: string
     state: string
-    zip: string
+    zip?: string
     country: string
   }
   phone: string
@@ -44,14 +44,13 @@ export function generateLocalBusinessSchema(business: {
     '@id': business.url,
     url: business.url,
     telephone: business.phone,
-    email: business.email,
     priceRange: business.priceRange || '$$',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: business.address.street,
+      ...(business.address.street ? { streetAddress: business.address.street } : {}),
       addressLocality: business.address.city,
       addressRegion: business.address.state,
-      postalCode: business.address.zip,
+      ...(business.address.zip ? { postalCode: business.address.zip } : {}),
       addressCountry: business.address.country,
     },
     geo: {

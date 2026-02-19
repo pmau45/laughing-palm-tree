@@ -52,7 +52,6 @@ export default async function LocationPage({ params }: LocationPageProps) {
       city: location.name,
     },
     phone: BUSINESS_INFO.phone,
-    email: BUSINESS_INFO.email,
     url: `${SITE_URL}/locations/${location.slug}`,
     coordinates: BUSINESS_INFO.coordinates,
     priceRange: '$$',
@@ -72,30 +71,30 @@ export default async function LocationPage({ params }: LocationPageProps) {
       <div className="section-padding">
         <div className="container-custom">
           {/* Breadcrumb */}
-          <nav className="mb-8 text-sm text-gray-600">
+          <nav className="mb-8 text-sm text-[var(--muted)]">
             <Link href="/" className="hover:text-primary">
               Home
             </Link>
             {' / '}
-            <span className="text-gray-900">{location.name}</span>
+            <span className="text-[var(--light)]">{location.name}</span>
           </nav>
 
           {/* Hero Section */}
           <div className="mb-16 text-center">
-            <h1 className="mb-4 text-4xl font-heading font-bold text-gray-900 md:text-5xl">
+            <h1 className="mb-4 text-4xl font-heading font-bold text-primary md:text-5xl">
               Dog Training in {location.name}, FL
             </h1>
-            <p className="mx-auto max-w-2xl text-lg text-gray-600">
+            <p className="mx-auto max-w-2xl text-lg text-[var(--muted)]">
               Professional dog training services serving {location.name} and the surrounding areas. 
               Transform your dog with proven, science-based methods.
             </p>
           </div>
 
           <div className="text-center">
-            <p className="text-xl text-gray-600 mb-6">
+            <p className="text-xl text-[var(--muted)] mb-6">
               Content coming soon. Check back later!
             </p>
-            <p className="text-gray-600">
+            <p className="text-[var(--muted)]">
               Serving {location.name} and surrounding areas with professional dog training services.
             </p>
           </div>

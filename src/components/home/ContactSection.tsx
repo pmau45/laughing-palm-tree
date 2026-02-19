@@ -130,10 +130,6 @@ export default function ContactSection() {
                 <input type="text" id="name" name="name" placeholder="Your name" required />
               </div>
               <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="your@email.com" required />
-              </div>
-              <div className="form-group">
                 <label htmlFor="challenge">What challenges are you facing?</label>
                 <textarea id="challenge" name="challenge" placeholder="Tell us about your dog's behavior challenges..." required></textarea>
               </div>

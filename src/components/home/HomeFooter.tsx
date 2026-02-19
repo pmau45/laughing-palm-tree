@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { FaPhone, FaMapMarkerAlt, FaInstagram, FaFacebookF } from 'react-icons/fa'
+import { FaPhone, FaMapMarkerAlt, FaInstagram, FaFacebookF, FaTwitter } from 'react-icons/fa'
 import { BUSINESS_INFO } from '@/lib/constants'
 
 export default function HomeFooter() {
@@ -12,8 +12,8 @@ export default function HomeFooter() {
         </div>
         <div className="footer-section">
           <h4>Contact</h4>
-          <p><FaPhone /> {BUSINESS_INFO.phone}</p>
-          <p><FaMapMarkerAlt /> Jacksonville, FL</p>
+          <p><FaPhone size={14} /> {BUSINESS_INFO.phone}</p>
+          <p><FaMapMarkerAlt size={14} /> Jacksonville, FL</p>
         </div>
         <div className="footer-section">
           <h4>Quick Links</h4>
@@ -38,10 +38,13 @@ export default function HomeFooter() {
           <h4>Follow Us</h4>
           <div className="social-links">
             <a href={BUSINESS_INFO.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <FaInstagram />
+              <FaInstagram size={20} />
             </a>
             <a href={BUSINESS_INFO.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <FaFacebookF />
+              <FaFacebookF size={20} />
+            </a>
+            <a href={BUSINESS_INFO.social.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <FaTwitter size={20} />
             </a>
           </div>
         </div>
