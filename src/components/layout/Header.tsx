@@ -6,7 +6,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-[var(--rule)] bg-[#0c0c0c]/95 backdrop-blur">
       <div className="container-custom flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <span className="logo text-2xl">
+          <span className="font-heading text-2xl tracking-widest text-primary">
             {BUSINESS_INFO.name}
           </span>
         </Link>
