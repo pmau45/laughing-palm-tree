@@ -26,7 +26,7 @@
     --ink: var(--earth-dark);
     --ink-2: var(--earth-surface);
     --ink-3: var(--earth-muted);
-    --rule: var(--earth-muted);
+    --rule: #3A3E38;
     --muted: var(--light-muted);
 }
 
@@ -115,7 +115,7 @@ textarea:focus {
 /* ===================================
    NAVIGATION
    =================================== */
-nav {
+.main-nav {
     position: fixed;
     top: 0;
     left: 0;
