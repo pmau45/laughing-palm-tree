@@ -13,16 +13,16 @@ export default function ContactPage() {
       <div className="container-custom">
         <div className="mx-auto max-w-4xl">
           <div className="mb-12 text-center">
-            <h1 className="mb-4 text-4xl font-heading font-bold text-gray-900 md:text-5xl">
+            <h1 className="mb-4 text-4xl font-heading font-bold text-primary md:text-5xl">
               Contact Us
             </h1>
           </div>
 
           <div className="text-center">
-            <p className="text-xl text-gray-600 mb-6">
+            <p className="text-xl text-[var(--muted)] mb-6">
               Content coming soon. Check back later!
             </p>
-            <p className="text-gray-600">
+            <p className="text-[var(--muted)]">
               For immediate assistance, please call us at{' '}
               <a href={`tel:${BUSINESS_INFO.phoneTel}`} className="text-primary hover:underline">
                 {BUSINESS_INFO.phone}

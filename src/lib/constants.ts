@@ -3,12 +3,9 @@ export const BUSINESS_INFO = {
   tagline: 'Professional Dog Training in Jacksonville, FL',
   phone: '(904) 458-7561',
   phoneTel: '9044587561',
-  email: 'info@axiomcanine.com',
   address: {
-    street: '123 Training Way',
     city: 'Jacksonville',
     state: 'FL',
-    zip: '32202',
     country: 'US',
   },
   hours: {

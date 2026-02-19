@@ -12,20 +12,20 @@ export default function AboutPage() {
       <div className="container-custom">
         <div className="mx-auto max-w-3xl">
           {/* Breadcrumb */}
-          <nav className="mb-8 text-sm text-gray-600">
+          <nav className="mb-8 text-sm text-[var(--muted)]">
             <Link href="/" className="hover:text-primary">
               Home
             </Link>
             {' / '}
-            <span className="text-gray-900">About</span>
+            <span className="text-[var(--light)]">About</span>
           </nav>
 
-          <h1 className="mb-6 text-4xl font-heading font-bold text-gray-900 md:text-5xl">
+          <h1 className="mb-6 text-4xl font-heading font-bold text-primary md:text-5xl">
             About Axiom Canine
           </h1>
 
           <div className="prose prose-lg text-center">
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-[var(--muted)]">
               Content coming soon. Check back later!
             </p>
           </div>

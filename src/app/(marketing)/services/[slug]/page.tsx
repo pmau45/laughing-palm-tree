@@ -70,7 +70,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         <div className="container-custom">
           <div className="mx-auto max-w-3xl">
             {/* Breadcrumb */}
-            <nav className="mb-8 text-sm text-gray-600">
+            <nav className="mb-8 text-sm text-[var(--muted)]">
               <Link href="/" className="hover:text-primary">
                 Home
               </Link>
@@ -79,21 +79,21 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 Services
               </Link>
               {' / '}
-              <span className="text-gray-900">{service.title}</span>
+              <span className="text-[var(--light)]">{service.title}</span>
             </nav>
 
-            <h1 className="mb-4 text-4xl font-heading font-bold text-gray-900 md:text-5xl">
+            <h1 className="mb-4 text-4xl font-heading font-bold text-primary md:text-5xl">
               {service.title}
             </h1>
 
-            <p className="mb-8 text-xl text-gray-600">{service.description}</p>
+            <p className="mb-8 text-xl text-[var(--muted)]">{service.description}</p>
 
             <div className="rounded-lg bg-primary/10 p-6">
               <p className="text-2xl font-bold text-primary">{service.price}</p>
             </div>
 
             <div className="prose prose-lg text-center">
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-[var(--muted)]">
                 Content coming soon. Check back later!
               </p>
               <div className="mt-8">
