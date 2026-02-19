@@ -84,6 +84,22 @@ export function Footer() {
                   Mandarin
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/locations/orange-park"
+                  className="text-sm text-[var(--muted)] hover:text-primary"
+                >
+                  Orange Park
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/locations/st-augustine"
+                  className="text-sm text-[var(--muted)] hover:text-primary"
+                >
+                  St. Augustine
+                </Link>
+              </li>
             </ul>
           </div>
 

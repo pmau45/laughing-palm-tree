@@ -27,9 +27,9 @@ const config: Config = {
         'gradient-gold': 'linear-gradient(135deg, var(--gold-dk) 0%, var(--gold) 50%, var(--gold-lt) 100%)',
       },
       fontFamily: {
-        heading: ['system-ui', 'sans-serif'],
-        body: ['system-ui', 'sans-serif'],
-        serif: ['Georgia', 'serif'],
+        heading: ['"Bebas Neue"', 'sans-serif'],
+        body: ['"DM Sans"', 'sans-serif'],
+        serif: ['"DM Serif Display"', 'serif'],
       },
     },
   },

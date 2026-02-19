@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { BUSINESS_INFO, SITE_URL } from '@/lib/constants'
-import { JsonLd, generateLocalBusinessSchema } from '@/components/seo/JsonLd'
+import { JsonLd } from '@/components/seo/JsonLd'
 
 export const metadata: Metadata = {
   title: 'Axiom Canine | Dog Training Jacksonville FL | Structure. Consistency. Results.',

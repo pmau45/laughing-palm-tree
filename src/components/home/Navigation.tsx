@@ -16,7 +16,7 @@ export default function Navigation() {
   }
 
   return (
-    <nav role="navigation" aria-label="Main navigation">
+    <nav className="main-nav" role="navigation" aria-label="Main navigation">
       <div className="nav-container">
         <Link href="/" className="logo" aria-label="Axiom Canine Home">AXIOM CANINE</Link>
         <button
