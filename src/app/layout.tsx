@@ -63,7 +63,7 @@ export default function RootLayout({
     "name": "Axiom Canine",
     "description": "Professional dog training services in Jacksonville, FL",
     "url": "https://axiomcanine.com",
-    "telephone": "(904) 458-7561",
+    "telephone": BUSINESS_INFO.phone,
     "image": "https://axiomcanine.com/logo.png",
     "address": {
       "@type": "PostalAddress",
@@ -96,7 +96,7 @@ export default function RootLayout({
     "name": "Axiom Canine Dog Training",
     "description": "Professional dog training services specializing in obedience training, behavior modification, and puppy training",
     "url": "https://axiomcanine.com",
-    "telephone": "(904) 458-7561",
+    "telephone": BUSINESS_INFO.phone,
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Jacksonville",
@@ -118,14 +118,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Font Awesome */}
-        <link 
-          rel="stylesheet" 
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
-          integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
-          crossOrigin="anonymous" 
-        />
-        
         {/* Favicon */}
         <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐕</text></svg>" />
         
