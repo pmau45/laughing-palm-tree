@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { BUSINESS_INFO, SITE_URL } from '@/lib/constants'
 import { JsonLd } from '@/components/seo/JsonLd'
+import { Header } from '@/components/layout/Header'
+import { Footer } from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
   title: 'Axiom Canine | Dog Training Jacksonville FL | Structure. Consistency. Results.',
@@ -127,7 +129,9 @@ export default function RootLayout({
       </head>
       <body>
         <a href="#main-content" className="skip-to-content">Skip to main content</a>
+        <Header />
         <main id="main-content">{children}</main>
+        <Footer />
       </body>
     </html>
   )

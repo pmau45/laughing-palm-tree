@@ -1,6 +1,5 @@
 'use client'
 
-import Navigation from '@/components/home/Navigation'
 import HeroSection from '@/components/home/HeroSection'
 import RealitySection from '@/components/home/RealitySection'
 import ManifestoQuote from '@/components/home/ManifestoQuote'
@@ -8,7 +7,6 @@ import PillarsSection from '@/components/home/PillarsSection'
 import ProblemsSection from '@/components/home/ProblemsSection'
 import ServiceAreaSection from '@/components/home/ServiceAreaSection'
 import ContactSection from '@/components/home/ContactSection'
-import HomeFooter from '@/components/home/HomeFooter'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { useSmoothScroll } from '@/hooks/useSmoothScroll'
 
@@ -18,7 +16,6 @@ export default function HomePage() {
 
   return (
     <>
-      <Navigation />
       <HeroSection />
       <RealitySection />
       <ManifestoQuote />
@@ -26,7 +23,6 @@ export default function HomePage() {
       <ProblemsSection />
       <ServiceAreaSection />
       <ContactSection />
-      <HomeFooter />
     </>
   )
 }
