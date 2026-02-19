@@ -5,17 +5,29 @@
    CSS VARIABLES - DESIGN SYSTEM
    =================================== */
 :root {
+    /* Earthy Luxury Palette */
+    --earth-dark: #121412;
+    --earth-surface: #1C1F1B;
+    --earth-muted: #2A2E28;
     --gold: #C8962E;
     --gold-lt: #E2B860;
     --gold-dk: #8A6518;
     --gold-overlay: rgba(200, 150, 46, 0.1);
-    --ink: #0C0C0C;
-    --ink-2: #161616;
-    --ink-3: #1E1E1E;
-    --rule: #2A2A2A;
-    --muted: #666;
+    --moss: #4A5D4E;
+    --clay: #A67C52;
     --light: #F4F0E8;
+    --light-muted: #A8A398;
     --white: #FFFFFF;
+    
+    /* Organic noise texture for premium feel */
+    --organic-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    
+    /* Backward Compatibility */
+    --ink: var(--earth-dark);
+    --ink-2: var(--earth-surface);
+    --ink-3: var(--earth-muted);
+    --rule: var(--earth-muted);
+    --muted: var(--light-muted);
 }
 
 /* ===================================
@@ -167,8 +179,7 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* Replaced stock image with gradient design */
-    background: linear-gradient(135deg, var(--ink) 0%, var(--ink-2) 50%, var(--ink-3) 100%);
+    background: radial-gradient(circle at top right, var(--earth-surface), var(--earth-dark));
     position: relative;
     padding: 80px 20px 30px;
 }
@@ -183,6 +194,19 @@ nav {
     bottom: 0;
     background: radial-gradient(ellipse at top, var(--gold-overlay) 0%, transparent 60%);
     pointer-events: none;
+}
+
+/* Organic noise overlay for premium tactile feel */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--organic-noise);
+    pointer-events: none;
+    opacity: 0.6;
 }
 
 .hero-content {
@@ -235,7 +259,7 @@ nav {
     text-decoration: none;
     border: none;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -243,13 +267,14 @@ nav {
 }
 
 .btn-primary {
-    background-color: var(--gold);
+    background: linear-gradient(135deg, var(--gold-dk) 0%, var(--gold) 50%, var(--gold-lt) 100%);
     color: var(--ink);
+    box-shadow: 0 4px 15px rgba(200, 150, 46, 0.2);
 }
 
 .btn-primary:hover {
-    background-color: var(--gold-lt);
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(200, 150, 46, 0.3);
 }
 
 .btn-secondary {

@@ -10,15 +10,21 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#1e40af',
-          dark: '#1e3a8a',
-          light: '#3b82f6',
+          DEFAULT: 'var(--gold)',
+          dark: 'var(--gold-dk)',
+          light: 'var(--gold-lt)',
         },
-        accent: {
-          DEFAULT: '#f97316',
-          dark: '#ea580c',
-          light: '#fb923c',
+        earth: {
+          DEFAULT: 'var(--earth-dark)',
+          surface: 'var(--earth-surface)',
+          muted: 'var(--earth-muted)',
         },
+        moss: 'var(--moss)',
+        clay: 'var(--clay)',
+      },
+      backgroundImage: {
+        'gradient-earth': 'linear-gradient(135deg, var(--earth-dark) 0%, var(--earth-surface) 100%)',
+        'gradient-gold': 'linear-gradient(135deg, var(--gold-dk) 0%, var(--gold) 50%, var(--gold-lt) 100%)',
       },
       fontFamily: {
         heading: ['system-ui', 'sans-serif'],
