@@ -91,49 +91,49 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="contact">
+    <section id="contact" className="bg-[var(--ink-2)] py-10 px-5">
       <div className="container">
         <div className="section-header reveal">
           <h2>Start Your Transformation</h2>
           <p>Request your free assessment today</p>
         </div>
-        <div className="contact-grid">
-          <div className="trust-badges">
-            <div className="trust-badge reveal">
-              <FaCertificate />
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-[1fr_1.5fr]">
+          <div className="flex flex-col gap-4">
+            <div className="reveal flex items-start gap-4">
+              <FaCertificate className="text-3xl text-[var(--gold)] mt-1 shrink-0" />
               <div>
-                <h3>Professional Training</h3>
-                <p>Proven methods backed by years of experience transforming dogs across Jacksonville.</p>
+                <h3 className="text-2xl text-[var(--light)] mb-2">Professional Training</h3>
+                <p className="text-[var(--muted)]">Proven methods backed by years of experience transforming dogs across Jacksonville.</p>
               </div>
             </div>
-            <div className="trust-badge reveal">
-              <FaUsers />
+            <div className="reveal flex items-start gap-4">
+              <FaUsers className="text-3xl text-[var(--gold)] mt-1 shrink-0" />
               <div>
-                <h3>Personalized Approach</h3>
-                <p>Every dog is unique. We tailor our training to your dog&apos;s specific needs and your goals.</p>
+                <h3 className="text-2xl text-[var(--light)] mb-2">Personalized Approach</h3>
+                <p className="text-[var(--muted)]">Every dog is unique. We tailor our training to your dog&apos;s specific needs and your goals.</p>
               </div>
             </div>
-            <div className="trust-badge reveal">
-              <FaChartLine />
+            <div className="reveal flex items-start gap-4">
+              <FaChartLine className="text-3xl text-[var(--gold)] mt-1 shrink-0" />
               <div>
-                <h3>Measurable Results</h3>
-                <p>We focus on real-world outcomes, not just obedience in controlled environments.</p>
+                <h3 className="text-2xl text-[var(--light)] mb-2">Measurable Results</h3>
+                <p className="text-[var(--muted)]">We focus on real-world outcomes, not just obedience in controlled environments.</p>
               </div>
             </div>
           </div>
-          <div className="contact-form reveal">
+          <div className="reveal bg-[var(--ink-3)] p-5 border border-[var(--rule)]">
             <form ref={formRef} name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleFormSubmit}>
               <input type="hidden" name="form-name" value="contact" />
               <input name="bot-field" className="hidden" aria-hidden="true" tabIndex={-1} />
-              <div className="form-group">
-                <label htmlFor="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required />
+              <div className="mb-5">
+                <label htmlFor="name" className="block mb-2 text-[var(--light)] font-medium">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required className="w-full p-3 min-h-[48px] bg-[var(--ink-2)] border border-[var(--rule)] text-[var(--light)] font-sans text-base focus:outline-none focus:border-[var(--gold)]" />
               </div>
-              <div className="form-group">
-                <label htmlFor="challenge">What challenges are you facing?</label>
-                <textarea id="challenge" name="challenge" placeholder="Tell us about your dog's behavior challenges..." required></textarea>
+              <div className="mb-5">
+                <label htmlFor="challenge" className="block mb-2 text-[var(--light)] font-medium">What challenges are you facing?</label>
+                <textarea id="challenge" name="challenge" placeholder="Tell us about your dog's behavior challenges..." required className="w-full p-3 min-h-[120px] bg-[var(--ink-2)] border border-[var(--rule)] text-[var(--light)] font-sans text-base focus:outline-none focus:border-[var(--gold)] resize-y"></textarea>
               </div>
-              <div className="form-actions">
+              <div className="flex gap-4 flex-wrap">
                 <button type="submit" className="btn btn-primary">Request My Free Assessment →</button>
                 <a href={`tel:${BUSINESS_INFO.phoneTel}`} className="btn btn-secondary"><FaPhone /> Call Now</a>
               </div>
