@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { SERVICE_AREAS, SITE_URL, BUSINESS_INFO } from '@/lib/constants'
-import { JsonLd, generateLocalBusinessSchema, generateBreadcrumbSchema } from '@/components/seo/JsonLd'
+import { JsonLd, generateLocalBusinessSchema, generateBreadcrumbSchema } from '@/components/JsonLd'
 
 interface LocationPageProps {
   params: Promise<{

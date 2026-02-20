@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import './globals.css'
+import '../styles/globals.css'
 import { BUSINESS_INFO, SITE_URL } from '@/lib/constants'
-import { JsonLd } from '@/components/seo/JsonLd'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
+import { JsonLd } from '@/components/JsonLd'
+import { Header } from '@/components/Header'
+import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Axiom Canine | Dog Training Jacksonville FL | Structure. Consistency. Results.',

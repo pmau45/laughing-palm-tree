@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+
+  // Production optimizations
+  swcMinify: true,
+  compress: true,
+
+  // Image optimization
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
@@ -9,6 +15,39 @@ const nextConfig = {
         hostname: 'images.unsplash.com',
       },
     ],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  },
+
+  // Better build output
+  output: 'standalone',
+
+  // Experimental features
+  experimental: {
+    optimizePackageImports: ['react-icons'],
+  },
+
+  // Security headers
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+        ],
+      },
+    ]
   },
 }
 
